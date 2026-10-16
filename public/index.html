@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Data Mahasiswa</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Data Mahasiswa</h1>
+    <p>Sistem Informasi Pengelolaan Data Mahasiswa</p>
+  </header>
+
+  <main>
+    <section class="card">
+      <h2>Tambah Mahasiswa</h2>
+
+      <form id="formMahasiswa">
+        <label for="nim">NIM</label>
+        <input type="number" id="nim" name="nim" required>
+
+        <label for="nama">Nama Lengkap</label>
+        <input type="text" id="nama" name="nama" required>
+
+        <label for="program_studi">Program Studi</label>
+        <input type="text" id="program_studi" name="program_studi" required>
+
+        <label for="angkatan">Angkatan</label>
+        <input type="number" id="angkatan" name="angkatan" required>
+
+        <label for="ipk">IPK (0.00–4.00)</label>
+        <input type="number" id="ipk" name="ipk"
+               min="0" max="4" step="0.01" required>
+
+        <button type="submit">Simpan Mahasiswa</button>
+      </form>
+
+      <p id="pesan"></p>
+    </section>
+
+    <section class="card">
+      <h2>Daftar Mahasiswa</h2>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>NIM</th>
+              <th>Nama</th>
+              <th>Program Studi</th>
+              <th>Angkatan</th>
+              <th>IPK</th>
+              <th>Lama Studi</th>
+              <th>Aksi</th>
+            </tr>
+          </thead>
+          <tbody id="daftarMahasiswa"></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
