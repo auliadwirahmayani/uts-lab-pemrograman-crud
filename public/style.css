@@ -10,7 +10,7 @@ body {
 }
 
 header {
-  background: #1d4ed8;
+  background: #1e3a8a;
   color: white;
   padding: 28px 6%;
 }
@@ -65,14 +65,14 @@ button {
   padding: 11px 16px;
   border: none;
   border-radius: 6px;
-  background: #2563eb;
+  background: #1e3a8a;
   color: white;
   font-weight: bold;
   cursor: pointer;
 }
 
 button:hover {
-  background: #1d4ed8;
+  background: #172554;
 }
 
 .table-wrapper {
@@ -92,6 +92,10 @@ th, td {
   text-align: left;
 }
 
+tbody tr:hover {
+  background-color: #eff6ff;
+}
+
 th {
   background: #eff6ff;
 }
@@ -102,7 +106,29 @@ th {
 }
 
 @media (max-width: 600px) {
+  header {
+    padding: 24px 5%;
+  }
+
+  main {
+    margin: 20px auto;
+    padding: 0 12px;
+  }
+
+  .card {
+    padding: 16px;
+  }
+
   form {
     grid-template-columns: 1fr;
+  }
+
+  table {
+    min-width: 600px;
+  }
+
+  th,
+  td {
+    padding: 10px;
   }
 }
