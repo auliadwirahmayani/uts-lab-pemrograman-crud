@@ -61,6 +61,12 @@ input {
   font-size: 14px;
 }
 
+input:focus {
+  outline: 2px solid #1e3a8a;
+  outline-offset: 1px;
+  border-color: #1e3a8a;
+}
+
 button {
   padding: 11px 16px;
   border: none;
