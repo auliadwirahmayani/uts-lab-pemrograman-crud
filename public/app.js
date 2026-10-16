@@ -1,6 +1,7 @@
 const form = document.getElementById("formMahasiswa");
 const daftar = document.getElementById("daftarMahasiswa");
 const pesan = document.getElementById("pesan");
+const searchMahasiswa = document.getElementById("searchMahasiswa");
 
 let dataMahasiswa = [];
 
@@ -19,8 +20,15 @@ async function muatData() {
 function tampilkanData() {
   daftar.innerHTML = "";
   const tahunSekarang = new Date().getFullYear();
+  const kataKunci = searchMahasiswa.value.toLowerCase().trim();
 
-  dataMahasiswa.forEach((m) => {
+  const dataTersaring = dataMahasiswa.filter((m) =>
+    [m.nim, m.nama, m.program_studi].some((nilai) =>
+      String(nilai).toLowerCase().includes(kataKunci)
+    )
+  );
+
+  dataTersaring.forEach((m) => {
     const baris = document.createElement("tr");
     const nilai = [
       m.nim,
@@ -145,5 +153,7 @@ form.addEventListener("reset", () => {
   form.querySelector('button[type="submit"]').textContent =
     "Simpan Mahasiswa";
 });
+
+searchMahasiswa.addEventListener("input", tampilkanData);
 
 muatData();
